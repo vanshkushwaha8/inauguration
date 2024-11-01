@@ -1,0 +1,91 @@
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('./assest/back1.png'); /* Update with the correct path */
+    background-size: cover; /* Ensure the background covers the whole area */
+    background-position: center; /* Center the background image */
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.ribbon-container {
+    position: relative;
+    text-align: center;
+}
+
+.ribbon {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #8E0911, #8E0911);
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 45px 848px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.ribbon-icon {
+    width: 70px;
+    height: auto;
+}
+
+.scissor {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    animation: scissorMove 2s ease infinite;
+}
+.welcome-message {
+    font-size: 2.5em;
+    color: #00ff00;
+    animation: fadeInOut 15s ease-in-out 15;
+    margin-top: 20px;
+}
+
+.fullscreen-celebration {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.fullscreen-celebration.fixed {
+    animation: none; /* Stop all animations */
+}
+
+.celebration-image {
+    max-width: 90%;
+    max-height: 90%;
+    animation: fadeInOut 3s ease-in-out 3, zoomInOut 3s ease-in-out 3;
+}
+
+@keyframes scissorMove {
+    0%, 100% { transform: translate(-50%, -50%) rotate(-10deg); }
+    50% { transform: translate(-50%, -50%) rotate(10deg); }
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+@keyframes zoomInOut {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
